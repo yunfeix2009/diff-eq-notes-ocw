@@ -1,4 +1,4 @@
-#let title = "Notes on Differential Equation"
+#let title = "Notes on Differential Equations"
 #let course = "MIT OpenCourseWare 18.03"
 #let authors = "Saint Even and Slipper King"
 #let date = "July 2026"
