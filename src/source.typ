@@ -3,8 +3,12 @@
 #let authors = "Saint Even and Slipper King"
 #let date = "July 2026"
 #let abstract = [
-  Covers nonlinear dynamics and control of underactuated mechanical systems, with an emphasis on computational methods. Topics include the nonlinear dynamics of robotic manipulators, applied optimal and robust control and motion planning. Discussions include examples from biology and applications to legged locomotion, compliant manipulation, underwater robots, and flying machines.
+
+#quote[Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
+#align(right)[— Steven Strogatz
 ]
+Differential Equations are the language in which the laws of nature are expressed. 
+Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time.]
 
 #let web-view-recommendation = [
   For the best web viewing experience, we recommend using a Mozilla-based browser such as Firefox. This will be subject to change as browsers improve their MathML support.
@@ -35,7 +39,7 @@
     #v(2cm)
     #text(size: 24pt, weight: "bold")[Differential Equations]
 
-    #text(size: 13pt)[MIT OpenCourseWare 18.03]
+    #text(size: 13pt)[MIT OpenCourseWare 18.03, 18.009]
 
     #text(size: 13pt)[#smallcaps[Saint Even] and #smallcaps[Slipper King]]
 
