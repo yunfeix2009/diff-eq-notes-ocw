@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "diff-eq-notes-ocw",
+			"path": ".."
+		},
+		{
+			"name": "src",
+			"path": "../../../Downloads/src"
+		}
+	],
+	"settings": {
+		"tinymist.typstExtraArgs": [
+			"--features",
+			"html",
+			"--package-path",
+			"packages"
+		]
+	}
+}
