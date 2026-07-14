@@ -29,6 +29,12 @@
 #context if render-mode.get() == "pdf" {
   pagebreak()
 }
+}
+#include "approximation/index.typ"
+
+#context if render-mode.get() == "pdf" {
+  pagebreak()
+}
 
 #include "robot-dynamics/index.typ"
 #context if render-mode.get() == "pdf" {

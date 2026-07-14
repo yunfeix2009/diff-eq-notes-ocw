@@ -1,4 +1,4 @@
-#import "../../lib.typ":*
+#import "../../../lib.typ":*
 
 #show: docs-subchapter.with(
   title: "Euler Method",
