@@ -8,11 +8,24 @@
 #include "cover.typ"
 #include "preface/index.typ"
 
+#context if render-mode.get() == "pdf" {
+  pagebreak()
+}
 #set heading(numbering: "1.1")
 #counter(heading).update(0)
-#include "preliminaries/index.typ"
-#include "robot-dynamics/index.typ"
+#include "overview/index.typ"
 
+#context if render-mode.get() == "pdf" {
+  pagebreak()
+}
+
+#include "preliminaries/index.typ"
+
+#context if render-mode.get() == "pdf" {
+  pagebreak()
+}
+
+#include "robot-dynamics/index.typ"
 #context if render-mode.get() == "pdf" {
   pagebreak()
 }

@@ -2,7 +2,7 @@
 #import "/lib.typ": *
 
 #show: docs-chapter.with(
-  title: "Robot Dynamics",
+  title: "(TEST) Robot Dynamics",
   route: "robot-dynamics",
   description: "Introductory material for robot dynamics and control.",
   children: [
