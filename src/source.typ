@@ -2,12 +2,17 @@
 #let course = "MIT OpenCourseWare 18.03"
 #let authors = "Saint Even and Slipper King"
 #let date = "July 2026"
-#let abstract = [
+#let abstract(render-mode) = [
 
 #quote[Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
 
-#align(right)[— Steven Strogatz
-]
+#if render-mode == "pdf" {
+  align(right)[— Steven Strogatz]
+}
+#else {
+  #html.elem("div", attrs: (style: "text-align: right"), [— Steven Strogatz])
+}
+
 Differential Equations are the language in which the laws of nature are expressed. 
 Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time.]
 
@@ -23,7 +28,7 @@ Understanding properties of solutions of differential equations is fundamental t
     html.elem("h1", title)
     html.elem("p", attrs: (class: "authors"), [by #smallcaps[Saint Even] and #smallcaps[Slipper King]])
     html.elem("p", attrs: (class: "date"), date)
-    html.elem("div", attrs: (class: "abstract"), abstract)
+    html.elem("div", attrs: (class: "abstract"), abstract("web"))
     html.elem("div", attrs: (class: "recommendation"), web-view-recommendation)
     html.elem("p", attrs: (class: "download"), {
       html.elem("a", attrs: (class: "button", href: href("pdf/notes.pdf")), [Download PDF])
@@ -49,6 +54,6 @@ Understanding properties of solutions of differential equations is fundamental t
     `Source: https://github.com/yunfeix2009/diff-eq-notes-ocw`
   ]
 
-  #block(inset: 10pt)[#abstract]
+  #block(inset: 10pt)[#abstract("pdf")]
   #outline(target: outline-target)
 ]
