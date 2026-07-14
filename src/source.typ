@@ -9,7 +9,7 @@
 #if render-mode == "pdf" {
   align(right)[— Steven Strogatz]
 }
-#else {
+else {
   html.elem("div", attrs: (style: "text-align: right"), [— Steven Strogatz])
 }
 
