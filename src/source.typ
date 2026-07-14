@@ -10,7 +10,7 @@
   align(right)[— Steven Strogatz]
 }
 #else {
-  #html.elem("div", attrs: (style: "text-align: right"), [— Steven Strogatz])
+  html.elem("div", attrs: (style: "text-align: right"), [— Steven Strogatz])
 }
 
 Differential Equations are the language in which the laws of nature are expressed. 
