@@ -27,3 +27,13 @@ In the field of controlling and training of autonomous stuff, there are three po
 
   @itm:testenum @eq:hi
 ])
+
+
+#lbl(
+  <thm:elimination-method-by-ellin>,
+  theorem[ellin's theorem][
+    ta shuo zhe ge elimination dei zhe me nong
+  ],
+)
+
+@thm:elimination-method-by-ellin

@@ -1,19 +1,19 @@
 #let title = "Notes on Differential Equations"
 #let course = "MIT OpenCourseWare 18.03"
-#let authors = "Saint Even and Slipper King"
+#let authors = ("Saint Even", "Slipper King")
 #let date = "July 2026"
 #let abstract(render-mode) = [
 
-#quote[Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
+  #quote[Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
 
-#if render-mode == "pdf" {
-  align(right)[— Steven Strogatz]
-} else {
-  html.elem("div", attrs: (style: "text-align: right"), [— Steven Strogatz])
-}
+  #if render-mode == "pdf" {
+    align(right)[— Steven Strogatz]
+  } else {
+    html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), [— Steven Strogatz])
+  }
 
-Differential Equations are the language in which the laws of nature are expressed. 
-Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time.]
+  Differential Equations are the language in which the laws of nature are expressed.
+  Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time.]
 
 #let web-view-recommendation = [
   For the best web viewing experience, we recommend using a Mozilla-based browser such as Firefox. This will be subject to change as browsers improve their MathML support.
@@ -34,25 +34,41 @@ Understanding properties of solutions of differential equations is fundamental t
     })
   })
 }
+#let join-oxford-commas(v) = {
+  if v.len() < 2 { v.at(0, default: "") } else if v.len() == 2 { v.join(" and ") } else {
+    v.slice(0, -1).join(", ") + ", and " + v.last()
+  }
+}
 
 #let pdf-cover(outline-target: heading) = [
   #set document(
     title: title,
-    author: authors,
+    author: join-oxford-commas(authors),
   )
+  #set page(background: rotate(30deg, {
+    let f(n) = {
+      if n <= 1 {
+        $#box($script(dot(x))$)$
+      } else {
+        let prev = f(n - 1)
+        $#prev _(#prev)^(#prev)$
+      }
+    }
+
+    text(fill: black.transparentize(70%))[$#f(8)$]
+  }))
   #align(center)[
     #v(2cm)
-    #text(size: 24pt, weight: "bold")[Differential Equations]
+    #text(size: 24pt, weight: "bold")[#title]
 
-    #text(size: 13pt)[MIT OpenCourseWare 18.03, 18.009]
+    #text(size: 13pt)[#join-oxford-commas(authors.map(smallcaps))]
 
-    #text(size: 13pt)[#smallcaps[Saint Even] and #smallcaps[Slipper King]]
+    #text(size: 11pt)[#date]
 
-    #text(size: 11pt)[July 2026]
-
-    `Source: https://github.com/yunfeix2009/diff-eq-notes-ocw`
+    #raw("Source: " + source-url)
   ]
 
   #block(inset: 10pt)[#abstract("pdf")]
   #outline(target: outline-target)
+  #set page(background: none)
 ]

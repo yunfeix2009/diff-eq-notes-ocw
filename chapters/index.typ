@@ -28,7 +28,6 @@
 
 #context if render-mode.get() == "pdf" {
   pagebreak()
-
 }
 #include "approximation/index.typ"
 
