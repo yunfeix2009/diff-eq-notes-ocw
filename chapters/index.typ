@@ -1,3 +1,5 @@
+
+
 #import "/src/components/index.typ": render-mode, route-folders, thm-counter, thm-state
 
 #set heading(numbering: none)
@@ -11,40 +13,22 @@
 #context if render-mode.get() == "pdf" {
   pagebreak()
 }
+
 #set heading(numbering: "1.1")
 #counter(heading).update(0)
+
 #include "overview/index.typ"
-
-#context if render-mode.get() == "pdf" {
-  pagebreak()
-}
-
 #include "preliminaries/index.typ"
-
-#context if render-mode.get() == "pdf" {
-  pagebreak()
-}
+#include "first/index.typ"
 #include "geo/index.typ"
-
-#context if render-mode.get() == "pdf" {
-  pagebreak()
-}
 #include "approximation/index.typ"
-
-#context if render-mode.get() == "pdf" {
-  pagebreak()
-}
-
 #include "robot-dynamics/index.typ"
-#context if render-mode.get() == "pdf" {
-  pagebreak()
-}
 
 #set heading(numbering: "A.1")
 #counter(heading).update(0)
 #route-folders.update(("appendices",))
 #include "appendices/index.typ"
 
-#set heading(numbering: none)
-#route-folders.update(())
+
+#context if render-mode.get() == "pdf" { pagebreak() }
 #include "bibliography/index.typ"

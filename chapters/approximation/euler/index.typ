@@ -17,3 +17,6 @@ As for any numerical methods, knowing the method itself does not suffice. Hence,
 
 Similar to the direct tangent line approximation, the result of the approximation with Euler's method is smaller than desired when the function concaves up and greater than the desired value when the function concaves down. To find whether the second derivative is positive or negative, we take the derivative of $y' = f(y, x)$ again. Usually, this step is very doable as taking derivatives is usually systematic.
 
+Hence, depending on whether the curve is concave or convex, (in the case where its second order derivative is $0$, the estimation from Euler's method becomes exact), Euler's method introduces a systematic error that is suboptimal for an estimation method.
+
+Increasing the approximation accuracy at the expense of the computational cost, decreasing the step size reduces the error in proportion, $e asymp c h$. Thus, we categorize Euler's method is a first-order method. Note that the first-order here has nothing to do with the first order differential equation, discussed in @sec:first.

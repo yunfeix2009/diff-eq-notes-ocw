@@ -3,7 +3,6 @@
 #import "/src/source.typ" as source
 
 #let notes-title = source.title
-#let course = source.course
 #let authors = source.authors
 #let date = source.date
 #let source-url = source.source-url
@@ -508,7 +507,7 @@
 }
 
 #let _redirect-404-page() = {
-  let target = "https://slipperking.github.io/complex-analysis/page-not-found"
+  let target = "https://yunfeix2009.github.io/lin-alg-notes-ocw/page-not-found/"
 
   document("/404.html", title: "Redirecting…")[
     #show: document-styles.with(mode: "web")
@@ -594,7 +593,10 @@
   ..args,
 )
 #let docs-frontmatter(..args) = _docs-page(kind: "frontmatter", level: 1, heading-format: _plain-heading-format, ..args)
-#let docs-chapter(..args) = _docs-page(kind: "chapter", level: 1, heading-format: _chapter-heading-format, ..args)
+#let docs-chapter(..args) = {
+  _docs-page(kind: "chapter", level: 1, heading-format: _chapter-heading-format, ..args)
+  context if render-mode.get() == "pdf" { pagebreak() }
+}
 #let docs-subchapter(..args) = _docs-page(kind: "subchapter", level: 2, heading-format: _section-heading-format, ..args)
 #let docs-subsubchapter(..args) = _docs-page(
   kind: "subsubchapter",
