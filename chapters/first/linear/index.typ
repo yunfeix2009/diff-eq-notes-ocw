@@ -6,16 +6,16 @@
   label: <sec:linear-first>,
 )
 
-The linear first-order differential equation is one type of first-order DE that is solvable.
-#definition[
+The linear first-order differential equation @def:linear is one type of first-order DE that is solvable. This section discusses the technique used to solve it.
+#lbl(<def:linear-eqn>, definition[
   The standard form of a linear first-order differential equation is $ y' + p(x) y = q(x). $
-]
+])
 
 In order to solve this equation, the primary motivation is to rewrite $y' + p(x) y$ as $(u(x) y)'$ by multiplying both sides by $u(x)$ for certain $u(x)$. Hence, the following equation $ u(x) y'+ u(x)p(x) y = (u(x) y)' $ gives $ u(x) p(x) = u'(x) & ==> p(x) = u'/u \
                   & ==> integral p(x) dif x = ln u #tag[(ignore $C$ here as\ any $u(x)$ suffice)] \
                   & ==> u(x) = e^(integral p(x) dif x). $
 
-Thus, the differential equation could be solved as $ u(x) y = integral (u(x) q(x)) dif x ==> y = (integral (u(x) q(x)) dif x)/u(x). $
+Thus, the differential equation could be solved as $ u(x) y = integral (u(x) q(x)) dif x ==> y = (integral (u(x) q(x)) dif x)/u(x). $ This method is known as _integration factor_, where $u(x)$ is specifically the integration factor.
 
 #example[
   Solve the differential equation $ x y' - y = x^3. $
