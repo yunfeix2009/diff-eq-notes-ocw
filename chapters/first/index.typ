@@ -7,6 +7,7 @@
   children: [
     #include "linear/index.typ"
     #include "change-var/index.typ"
+    #include "autonamous/index.typ"
   ],
 )
 

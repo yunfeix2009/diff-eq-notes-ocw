@@ -3,17 +3,22 @@
 #let authors = ("Saint Even", "Slipper King")
 #let date = "July 2026"
 #let abstract(render-mode) = [
-
-  #quote[Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
-
+  #let _quote = quote[ Since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations.]
+  #let _credit = [
+    — Steven Strogatz
+  ]
   #if render-mode == "pdf" {
-    align(right)[— Steven Strogatz]
+    align(center)[#_quote]
+    align(right)[#_credit]
   } else {
-    html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), [— Steven Strogatz])
+    html.elem("div", attrs: (style: "text-align: center;"), _quote)
+    html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
   }
-
   Differential Equations are the language in which the laws of nature are expressed.
-  Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time.]
+  Understanding properties of solutions of differential equations is fundamental to much of contemporary science and engineering. Ordinary differential equations (ODE’s) deal with functions of one variable, which can often be thought of as time @mit_registrar_course18_fall2026.
+]
+
+
 
 #let web-view-recommendation = [
   For the best web viewing experience, we recommend using a Mozilla-based browser such as Firefox. This will be subject to change as browsers improve their MathML support.
@@ -45,17 +50,17 @@
     title: title,
     author: join-oxford-commas(authors),
   )
-  #set page(background: rotate(30deg, {
+  #set page(background: rotate(20deg, {
     let f(n) = {
       if n <= 1 {
-        $#box($script(dot(x))$)$
+        $#box($script(dif)$)$
       } else {
         let prev = f(n - 1)
         $#prev _(#prev)^(#prev)$
       }
     }
 
-    text(fill: black.transparentize(70%))[$#f(8)$]
+    text(fill: black.transparentize(85%))[$#f(8)$]
   }))
   #align(center)[
     #v(2cm)
