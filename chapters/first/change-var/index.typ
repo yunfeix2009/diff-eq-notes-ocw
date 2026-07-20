@@ -39,7 +39,12 @@ We first consider direct substitution.
 ]
 #solution[
   $
-    y' = y/x - y^2\ ==> y'/y^2 - 1/x 1/y = -1 \ ==> k' + 1/x k = 1 #tag[k:= 1/y] \ ==> x k' + k = x = (x k)' \ ==> x k = 1/2 x^2 + C \ ==> k = 1/2 x + C/x. #qedhere
+    & quad quad y' = y/x - y^2 \
+    & ==> y'/y^2 - 1/x 1/y = -1 \
+    & ==> k' + 1/x k = 1 #tag[(k:= 1/y)] \
+    & ==> x k' + k = x = (x k)' \
+    & ==> x k = 1/2 x^2 + C \
+    & ==> k = 1/2 x + C/x. #qedhere
   $
 ]
 
@@ -52,8 +57,14 @@ With inverse substitution, homogeneous first-order ODE's @def:homo could be solv
 ]
 
 #example[
-  Consider a starship traveling away from a star in planar motion. Given that the starship always makes a $45^degree$ angle with the incident light from the star, find its trajectory.
+  Consider a starship traveling away from a star in planar motion. Given that the starship always makes a $45 degree$ angle with the incident light from the star, find its trajectory.
 ]
 #solution[
-  Although this problem is easier solved with polar coordinates, for the sake of practicing, we use rectilinear coordinates. Let the star be at the origin. Assume the starship is at $(x_0, y_0)$ in an instant, the slope at which it travels if $ tan(arctan(y_0/x_0) + 45^degree) = (y_0/x_0 + 1)/(1 - y_0/x_0). $ Let $z := y_0/x_0$, the slope becomes $ y' = x z ' + z = (z +1)/(1-z) \ ==> (dif z)/((z+1)/(1-z) - z) = (dif x)/x \ ==> (1-z)/(1+z^2) dif z =( dif x)x \ ==> arctan(z) - 1/2 ln(1+z^2) = ln x +C\ ==> arctan (y/x) = ln(sqrt(1+(y/x)^2)) + ln x + C \ ==> arctan (y/x) = ln(sqrt(x^2 + y^2)) + C \ ==> theta = ln(r) + C #tag[change of coordinates] \ ==> r = C e^theta, $ known as exponential spiral.
+  Although this problem is easier solved with polar coordinates, for the sake of practicing, we use rectilinear coordinates. Let the star be at the origin. Assume the starship is at $(x_0, y_0)$ in an instant, the slope at which it travels if $ tan(arctan(y_0/x_0) + 45 degree) = (y_0/x_0 + 1)/(1 - y_0/x_0). $ Let $z := y_0/x_0$, the slope becomes $ & quad quad y' = x z ' + z = (z +1)/(1-z) \
+  & ==> (dif z)/((z+1)/(1-z) - z) = (dif x)/x \
+  & ==> (1-z)/(1+z^2) dif z =( dif x)x \
+  & ==> arctan(z) - 1/2 ln(1+z^2) = ln x +C \
+  & ==> arctan (y/x) = ln(sqrt(1+(y/x)^2)) + ln x + C \
+  & ==> arctan (y/x) = ln(sqrt(x^2 + y^2)) + C \
+  & ==> theta = ln(r) + C #tag[(change of coordinates)] \& ==> r = C e^theta, $ known as exponential spiral.
 ]
