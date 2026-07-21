@@ -6,9 +6,10 @@
   label: <sec:first>,
   children: [
     #include "linear/index.typ"
-    #include "change-var/index.typ"
-    #include "autonamous/index.typ"
     #include "constant-coe/index.typ"
+    #include "autonamous/index.typ"
+    #include "change-var/index.typ"
+    #include "app/index.typ"
   ],
 )
 

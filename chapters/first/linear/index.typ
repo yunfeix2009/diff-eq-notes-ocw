@@ -16,7 +16,13 @@ In order to solve this equation, the primary motivation is to rewrite $y' + p(x)
                   & ==> u(x) = e^(integral p(x) dif x). $
 
 Thus, the differential equation could be solved as $ & quad quad u(x) y = integral (u(x) q(x)) dif x \
-& ==> y = (integral (u(x) q(x)) dif x)/u(x). $ This method is known as _integration factor_, where $u(x)$ is specifically the integration factor.
+& ==> y = (integral (u(x) q(x)) dif x)/u(x). $ This method is known as _integrating factor_, where $u(x)$ is specifically the integrating factor.
+
+Although the formula is almost never used in practice, for completeness, it is included here.
+#lbl(
+  <thm:linear-ode>,
+  theorem[ For the equation in @def:linear-eqn, the general solution is $ y(t) = e^(-integral p(t) dif t) integral(q(t) e^(integral p(t) dif t) dif t) + C e^(- integral p(t) dif t). $],
+)
 
 #example[
   Solve the differential equation $ x y' - y = x^3. $
@@ -44,21 +50,5 @@ Thus, the differential equation could be solved as $ & quad quad u(x) y = integr
   ==> y = (integral 2x dif x)/u(x) = (x^2 +C)/(1+cos x). #qedhere $
 ]
 
-
-Despite being simple and special as in a form of differential equation, linear first-order differential equations could be used to model many systems.
-
-+ Heat conduction / concentration diffusion
-
-  The model is as following. An object of temperature (/concentration) is placed in an environment of different, fixed temperature (/concentration). Both the environment and the object have a uniform temperature (/concentration) at all times. The rate at which the temperature (/concentration) change is proportional to the difference in temperature (/concentration) between the object and the environment, with positive ratio $k$, conductivity. $ dv(T, t) = k (T_e - T). $ Notice that to keep $k$ positive, the right side must be $T_e - T$ rather than $T-T_e$.
-
-  This equation could be re-written in standard form as $ T' + k T = k T_e, $ where $k$ and $T_e$ may also be treated as functions of $t$, to better model the system. In order to solve this system, $ u(t) := e^(integral k(t) dif t). $
-
-  Then, $ e^(integral k(t) dif t) T = integral_t (k T_e e^(k(t) dif t)) dif t + C \ ==> T(t) = e^(- integral k(t) dif t) integral_t (k T_e e^(k(t) dif t)) dif t + C e^(- integral k(t) dif t). $
-
-  Since we have let $k > 0$, as $t-> oo$, $C e^(- integral k(t) dif t) -> 0$, the system approaches a fixed state that does not depend on its initial condition that determines $C$. Thus, term the $C e^(- integral k(t) dif t)$ term to be _transient_ and the $ e^(- integral k(t) dif t) integral_t (k T_e e^(k(t) dif t)) dif t $ term to be steady-state. Since all the curves approach the steady-state solution, any curve may be defined as the stead-state solution. Generally, the solution that is the simplest is selected as the steady-state solution.
-
-+ Mixing
-+ Decay (including some banking)
-+ Certain Kinematics
 
 The special thing about linear equations is that they satisfy the superposition principle, or from linear algebra's point of view, fix the coefficient of $y$, the map from $q(t)$ to the steady-state solution is linear.

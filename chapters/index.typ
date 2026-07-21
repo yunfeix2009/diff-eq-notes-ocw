@@ -19,8 +19,9 @@
 
 #include "overview/index.typ"
 #include "preliminaries/index.typ"
-#include "first/index.typ"
 #include "geo/index.typ"
+#include "first/index.typ"
+#include "second/index.typ"
 #include "approximation/index.typ"
 #include "robot-dynamics/index.typ"
 
