@@ -8,6 +8,7 @@
     #include "linear/index.typ"
     #include "change-var/index.typ"
     #include "autonamous/index.typ"
+    #include "constant-coe/index.typ"
   ],
 )
 

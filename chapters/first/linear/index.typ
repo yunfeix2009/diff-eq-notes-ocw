@@ -55,7 +55,10 @@ Despite being simple and special as in a form of differential equation, linear f
 
   Then, $ e^(integral k(t) dif t) T = integral_t (k T_e e^(k(t) dif t)) dif t + C \ ==> T(t) = e^(- integral k(t) dif t) integral_t (k T_e e^(k(t) dif t)) dif t + C e^(- integral k(t) dif t). $
 
-  Notice that as $t-> oo$, $C e^(- integral k(t) dif t) -> 0$, the system approaches a fixed state that does not depend on its initial condition that determines $C$.
+  Since we have let $k > 0$, as $t-> oo$, $C e^(- integral k(t) dif t) -> 0$, the system approaches a fixed state that does not depend on its initial condition that determines $C$. Thus, term the $C e^(- integral k(t) dif t)$ term to be _transient_ and the $ e^(- integral k(t) dif t) integral_t (k T_e e^(k(t) dif t)) dif t $ term to be steady-state. Since all the curves approach the steady-state solution, any curve may be defined as the stead-state solution. Generally, the solution that is the simplest is selected as the steady-state solution.
+
 + Mixing
 + Decay (including some banking)
 + Certain Kinematics
+
+The special thing about linear equations is that they satisfy the superposition principle, or from linear algebra's point of view, fix the coefficient of $y$, the map from $q(t)$ to the steady-state solution is linear.
