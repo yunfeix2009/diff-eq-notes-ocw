@@ -1,9 +1,9 @@
 #import "/lib.typ": *
 
 #show: docs-subchapter.with(
-  title: "Linear Second-order Differential Equations with Constant Coefficient",
-  route: "linear",
-  label: <sec:linear-second>,
+  title: "Homogeneous Linear Second-order Differential Equations with Constant Coefficient",
+  route: "homo-linear",
+  label: <sec:homo-linear-second>,
 )
 
 As usual, we begin with the simplest example of second-order ODE, one with constant coefficients and is homogeneous. The standard form of such is $ y'' + p y' + q y = 0. $ Here, consider only the real differential equation, where the independent variable $t in RR$ and all coefficients, $p$ and $q$ are also real.

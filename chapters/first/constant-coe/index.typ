@@ -6,10 +6,10 @@
   label: <sec:const-coe>,
 )
 
-#definition[
+#lbl(<def:linear-const-coe-first>, definition[
   Let first-order linear ODE with _"constant coefficient"_ be those with constant coefficient before $y$. Hence, $y' + k y = k q(t).$
-]
-The the steady-state solution (assume $k>0$) is $ y(t) = e^(-k t) (integral q(t) e^(k t) dif t) $
+])
+The the steady-state solution (assume $k>0$) is $ y(t) = e^(-k t) (integral q(t) e^(k t) dif t + C) $
 
 This equation plays an important role in modeling systems. The model takes $q(t)$ as the input and the system then becomes $y(t)$.
 

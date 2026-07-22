@@ -6,6 +6,7 @@
   label: <sec:second>,
   children: [
     #include "linear-constant-coe/index.typ"
+    #include "linear/index.typ"
     #include "app/index.typ"
   ],
 )
