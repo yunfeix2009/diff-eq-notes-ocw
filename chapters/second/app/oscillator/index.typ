@@ -2,7 +2,7 @@
 
 #show: docs-subsubchapter.with(
   title: "Damped Spring-mass Oscillator",
-  route: "damped=oscillator",
+  route: "damped-oscillator",
   label: <sec:damped-osc>,
 )
 The first example to be considered is the classic spring-mass-dashpot system in physics.

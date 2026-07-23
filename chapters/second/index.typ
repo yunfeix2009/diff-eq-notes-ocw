@@ -7,6 +7,7 @@
   children: [
     #include "linear-constant-coe/index.typ"
     #include "linear/index.typ"
+    #include "particular/index.typ"
     #include "app/index.typ"
   ],
 )
