@@ -6,6 +6,7 @@
   label: <sec:particular-second>,
   children: [
     #include "com-exp/index.typ"
+    #include "fourier/index.typ"
   ],
 )
 
