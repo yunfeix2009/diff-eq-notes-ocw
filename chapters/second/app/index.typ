@@ -7,6 +7,7 @@
   children: [
     #include "oscillator/index.typ"
     #include "circuit/index.typ"
+    #include "resonance/index.typ"
   ],
 )
 
