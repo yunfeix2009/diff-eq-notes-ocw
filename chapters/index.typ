@@ -22,6 +22,7 @@
 #include "geo/index.typ"
 #include "first/index.typ"
 #include "second/index.typ"
+#include "higher/index.typ"
 #include "approximation/index.typ"
 #include "robot-dynamics/index.typ"
 
