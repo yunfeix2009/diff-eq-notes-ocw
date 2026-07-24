@@ -106,20 +106,22 @@ To realize when the Fourier series converges to a given function, we have the fo
   If $f$ is continuous at $t_0$, its Fourier series is $f(t_0)$ at $t_0$.
   If $f$ has a jump discontinuity at $t_0$, its Fourier series evaluates to the average of the limits of the two sides.
 ]
-The proof is
-#let abstract(render-mode) = [
-  #let _quote = quote[among all the proofs not presented in this course, this one is the most beyond the scope of this class]
-  #let _credit = [
-    — Prof. Arthur Mattuck
-  ]
-  #if render-mode == "pdf" {
+
+#let _quote = quote[among all the proofs not presented in this course, this one is the most beyond the scope of this class]
+#let _credit = [
+  — Prof. Arthur Mattuck
+]
+
+#context {
+  let render-mode = state("render-mode").get()
+  if render-mode == "pdf" {
     align(center)[#_quote]
     align(right)[#_credit]
   } else {
     html.elem("div", attrs: (style: "text-align: center;"), _quote)
     html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
   }
-]
+}
 
 According to AI, it uses something as a dirichlet kernel. Proof omitted.
 

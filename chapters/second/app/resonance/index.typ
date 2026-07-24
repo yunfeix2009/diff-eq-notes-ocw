@@ -79,3 +79,10 @@ Interestingly, the frequency that maximizes the amplitude term is not frequency 
           & = cos B-cos A.
   $
 ]
+
+
+Still, it must be noted that in the case of the swing, the amplitude quickly increases such that the small angle approximation no longer suffice. Unfortunately, there are no analytical solutions to $ dot.double(theta)(t) + mu dot(theta)(t) +g/L sin(theta(t)) = 0 . $  Even if damping is negligible, the solution to $ dot.double(theta)(t) + g/L sin(theta(t)) = 0 $ is unfortunately $ theta(t) = 2 op("am") ((sqrt(2g + L c_1) (t + c_2))/(2sqrt(L)), (4g)/(2g + L c_1) ) $ where $          c_1, c_2 & = "constants depending on initial conditions" \
+  op("am") (u, k) & = integral_0^u op("dn")(v, k) dif v #tag[(Jacobi amplitude function)] \
+= op("dn") (u, k) & = sqrt(1- k^2 sin^2 (phi)) #tag[(Jacobi elliptic function)] $ and $phi$ satisfies $ u = integral_)^phi (dif t)/sqrt(1 - k^2 sin^2 (t)). $
+
+Perhaps, don't think about too much math the next time you are playing with your friends on swings.

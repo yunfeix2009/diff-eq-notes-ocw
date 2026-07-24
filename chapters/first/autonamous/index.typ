@@ -6,20 +6,21 @@
   label: <sec:auto>,
 )
 
-#let abstract(render-mode) = [
-  #let _quote = quote[Draw pictures instead. Draw pictures.]
-  #let _credit = [
-    Prof. Arthur Mattuck
-  ]
-  #if render-mode == "pdf" {
+
+#let _quote = quote[Draw pictures instead. Draw pictures.]
+#let _credit = [
+  Prof. Arthur Mattuck
+]
+#context {
+  let render-mode = state("render-mode").get()
+  if render-mode == "pdf" {
     align(center)[#_quote]
     align(right)[#_credit]
   } else {
     html.elem("div", attrs: (style: "text-align: center;"), _quote)
     html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
   }
-]
-
+}
 
 #definition[
   A first-order ODE is _autonomous_ iff it could be written in the form of $ dv(y, t) = f(y), $ specifically independent of $t$.

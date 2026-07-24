@@ -12,6 +12,17 @@ The Laplace transform may be seen as an extension from the Taylor series, $ f(x)
 
 However, this form is still very immature, and the following changes are made. First, since $x$ is the base of the exponentials, it makes sense to have $x in (0, 1)$, so $ln(x) <0$. Substitute $s := -ln x$, the term becomes positive and easier to work with. Since we are interested in the Laplace transform of a functional input, by convention $f(t)$ is used, instead of $a(t)$. Hence, the result of the Laplace transform of $f(x)$ is  $ F(s) = integral_0^oo f(t) e^(-s t) dif t, quad x in (0, 1). $
 
+From this definition, assume the integrand is integralalbe. The only thing keeping it from being illegal is when the integral diverges since an improper integral.
+#definition[
+  A function $f(t)$ is _exponential type_ iff there exist $C, k in RR$, $ forall t in RR^+ union {0}, quad abs(f(t)) <= C e^(k t). $
+]
+
+#theorem[
+  A function has a Laplace transform iff it is exponential type.
+]
+
+Easy to show that sinusoidal and powers are exponential type. However, $f(t) = 1/t$ fails to be exponential type as the integral diverges at $x = 0$. Moreover, functions such as $e^t^2$ or $t! (Gamma(t))$ also do not have Laplace transform.
+
 Notation wise, to convey that $F(s)$ is the result of the Laplace transform of $f(t)$, $ cal(L) (f(t)) = F(s). $ Alternatively to avoid extraneous parentheses occasionally, $ f(t) arrow.r.squiggly F(s). $
 
 Importantly, notice that since integration is a linear operator, so is Laplace transform.
@@ -77,6 +88,29 @@ Proof omitted.
 ]
 
 Recall that the Laplace transform is linear, the image of polynomials could be found with the lemma above.
+
+#lbl(<lem:lap-diff>, lemma[
+  If $f(t) arrow.squiggly F(s)$, $ f'(t) arrow.squiggly s F(s) - f(0). $
+])
+#proof[
+  $
+    cal(L)(f'(t)) & = integral_0^oo f'(t) e^(-s t) dif t \
+                  & = lr(f(t) e^(-s t)|)_0^oo - integral_0^oo - s e^(-s t) f'(t) dif t #tag[(integration by parts)] \
+                  & = 0 - f(0) +s F(s) #tag[($f(t)/e^(-s t)$ vanishes as $f$ is exponential type)] \
+                  & = s F(s) - f(0). #qedhere
+  $
+]
+
+#lbl(<cor:lap-difff>, corollary[
+  If $f(t) arrow.squiggly F(s)$, $ f'(t) arrow.squiggly s^2 F(s) - s f(0) - f'(0). $
+])
+#proof[
+  $
+    cal(L)(f''(t)) & = s cal(L)(f'(t)) - f'(0) #tag[(@lem:lap-diff)] \
+                   & = s (s F(s) - f(0)) - f'(0) \
+                   & = s^2 F(s) - s f(0) - f'(0). #qedhere
+  $
+]
 
 After the problem is solved with the transformed function, one still need to convert back, thus inverse transformation is needed.
 With partial fraction decomposition, transformations of sum of exponentials may be deciphered.
