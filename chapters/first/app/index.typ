@@ -11,7 +11,7 @@ Despite being simple and special as in a form of differential equation, linear f
 
 + Heat conduction / concentration diffusion
 
-  The model is as following. An object of temperature (/concentration) is placed in an environment of different, fixed temperature (/concentration). Both the environment and the object have a uniform temperature (/concentration) at all times. The rate at which the temperature (/concentration) change is proportional to the difference in temperature (/concentration) between the object and the environment, with positive ratio $k$, conductivity. $ dv(T, t) = k (T_e - T). $ Notice that to keep $k$ positive, the right side must be $T_e - T$ rather than $T-T_e$.
+  The model is as following. An object of temperature (/concentration) is placed in an environment of different, fixed temperature (/concentration). Both the environment and the object have a uniform temperature (/concentration) at all times. The rate at which the temperature (/concentration) change is proportional to the difference in temperature (/concentration) between the object and the environment, with positive ratio $k$, conductivity. #lbl(<eqn:newton-heat>, $ dv(T, t) = k (T_e - T). $) Notice that to keep $k$ positive, the right side must be $T_e - T$ rather than $T-T_e$.
 
   This equation could be re-written in standard form as $ T' + k T = k T_e, $ where $k$ and $T_e$ may also be treated as functions of $t$, to better model the system. In order to solve this system, $ u(t) := e^(integral k(t) dif t). $
 

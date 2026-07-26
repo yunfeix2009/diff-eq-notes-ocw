@@ -22,9 +22,9 @@
   }
 }
 
-#definition[
+#lbl(<def:auto>, definition[
   A first-order ODE is _autonomous_ iff it could be written in the form of $ dv(y, t) = f(y), $ specifically independent of $t$.
-]
+])
 
 Of course, with separation of variables, this equation may be solved analytically. It is still useful to extract qualitative inferences about its solution without going through the integration.
 

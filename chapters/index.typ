@@ -23,8 +23,8 @@
 #include "first/index.typ"
 #include "second/index.typ"
 #include "higher/index.typ"
+#include "system/index.typ"
 #include "approximation/index.typ"
-#include "robot-dynamics/index.typ"
 
 #set heading(numbering: "A.1")
 #counter(heading).update(0)

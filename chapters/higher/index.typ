@@ -6,6 +6,7 @@
   label: <sec:high>,
   children: [
     #include "linear/index.typ"
+    #include "app/index.typ"
   ],
 )
 

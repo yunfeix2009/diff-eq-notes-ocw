@@ -3,6 +3,7 @@
   title: "Geometric Interpretation",
   route: "geo",
   description: "geometric interpretation of differential equations",
+  label: <sec:geo>,
 )
 
 For the fundamental single variable first order differential equation, the solution could be realized or verified graphically.
@@ -31,3 +32,9 @@ Although the direction field could be drawn by finding the slope ($dv(y, x)$) of
 In multivariable calculus @saint_multivariable_calculus_notes, this is exactly the level curve.
 
 To plot all points with slope $c$, first solve $ y' = f(x, y) = c. $ Then, plot points on the isocline with slope $c$.
+
+The following really goes after @sec:system, though included here for completeness of the discussion on the geometric interpretations of differential equations.
+
+Systems of first order autonomous (see @def:auto) systems describe a velocity field.
+
+Take the example of the two dimensional case. $ cases(x' = f(x, y), y' = g(x, y)) $ gives the $y'/x'$, the slope, for each point in the plane. Hence, integral curves may be drawn knowing that information. This only the ratio is taken here, the lost information in the $RR^2$ representation is how "fast" the curve is moving that the point, or $sqrt((x')^2 + (y')^2)$ at $t = t_0$. Nonetheless, the velocity field describes the direction of the velocity accurately, providing a means of numerically approximating the solution curve for linear autonomous systems.
