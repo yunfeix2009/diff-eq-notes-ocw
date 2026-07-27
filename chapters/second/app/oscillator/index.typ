@@ -37,3 +37,18 @@ This model may describe the mechanism that automatically closes the door while p
 
 The case where there is no external force is now rather completely analyzed. Thus, now consider an external force term, with the new equation $ m x'' + b x' + k x = f(x). $
 In the door example, this represents the case when a person is pushing the door with force $f(t)$.
+
+#example[
+  Find the general solution to $ dot.double(x) + 2 dot(x) + 4 x = cos(3 t) $ and determine its angular frequency.
+]
+#solution[
+  The homogeneous equation is $ dot.double(x) + 2 dot(x) + 4 x = 0. $ Its characteristic equation is $ r^2 + 2 r + 4 r = 0, $ with roots $r = - 1 plus.minus sqrt(3) i$.
+  Hence, the general solution to the homogeneous equation is $ y_c = C_1 e^( - t) + C_2 e^( sqrt(3) t). $
+  To find a particular solution, complexify the given equation into, $ dot.double(tilde(x)) + 2 dot(tilde(x)) + 4 tilde(x) = e^( i 3 t). $
+  By @thm:exp-input, $ y_p := e^(i 3 t)/((3i)^2 + 2 dot (3i) + 4) = e^(i 3 t)/(-5 + 6i) $ is a particular solution. The real part of the complexified solution is $ Re(e^(i 3 t)/(-5 + 6i)) & = Re(((-5-6i) (cos(3t) + i sin(3t)))/61) \
+                          & = (-5 cos(3t) + 6 sin(3t))/61 $.
+
+  Therefore, the general solution to the given equation is $ C_1 e^(-t) + C_2 e^(sqrt(3) t) + cos(3 t)/19. $
+
+  The natural angular frequency is $sqrt(4) = 2$.
+]
