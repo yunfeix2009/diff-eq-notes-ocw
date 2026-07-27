@@ -9,6 +9,8 @@
     #include "circuit/index.typ"
     #include "concentration/index.typ"
     #include "war/index.typ"
+    #include "bio/index.typ"
+    #include "love/index.typ"
   ],
 )
 

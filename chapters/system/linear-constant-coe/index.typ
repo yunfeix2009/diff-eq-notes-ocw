@@ -49,4 +49,14 @@ The matrix method is more appropriate when the problem reflects an intrinsic sym
   Observe that the steady-state solution is $ vb(x) = C_1 mat(1; 1; 1), $ meaning all the cells have the same temperature, making physical sense.
 ]
 
-It should be noted that, similar to how directly solving the characteristic equation of a higher-order linear constant-coefficient equation, repeating roots introduces trouble that must be reconciled with the form $x^n e^x$, the matrix-based method would face the same phenomenon too. This occurs exactly when there is a repeating eigenvector (note that it is not the case with repeating eigenvalue necessarily, as illustrated with the above example @emp:heat-system). Interestingly
+It should be noted that, similar to how directly solving the characteristic equation of a higher-order linear constant-coefficient equation, repeating roots introduces trouble that must be reconciled with the form $x^n e^x$, the matrix-based method would face the same phenomenon too. This occurs exactly when there is a repeating eigenvector (note that it is not the case with repeating eigenvalue necessarily, as illustrated with the above example @emp:heat-system). Interestingly, real symmetric matrices have complete eigenvectors, removing this possibility.
+
+In the case where the eigenvalues are complex, the solution proceeds similar to the solution with real eigenvalues.
+#lbl(<emp:love>, example[
+  Solve the system $ cases(x' = x + 2y, y' = -x- y). $
+])
+#solution[
+  The coefficient matrix is $ vb(A) := mat(1, 2; -1, -1). $ Then, the characteristic equation is $ lambda^2 - trace vb(A) lambda + det vb(A) = 0, $ or $ lambda^2 + 1 = 0, quad lambda = plus.minus i. $ The corresponding eigenvector to $lambda = i$ is $ mat(2; -1 + i) = mat(2; -1) + i mat(0; 1). $ Therefore, $ e^(i t) vb(v) & = (cos t + i sin t) (mat(2; -1) + i mat(0; 1) ) \
+                & = (mat(2; -1) cos t - mat(0; 1) sin t) \
+                & quad+ i (mat(2; -1) sin t + mat(0; 1) cos t). $ The general solution is $ cases(x(t) = 2 C_1 cos t + 2 C_2 sin t, y(t) = C_1 (sin t - cos t) + C_2 (cos t - sin t)).#qedhere $
+]

@@ -1,9 +1,9 @@
 #import "/lib.typ": *
 
 #show: docs-subsubchapter.with(
-  title: "Lanchester Model -- Equations of War",
-  route: "lanchester-systems",
-  label: <sec:lanchester-systems>,
+  title: "War",
+  route: "war",
+  label: <sec:war>,
 )
 
 Consider the following model. Assume the two engaged sides each have $X$ and $Y$ units. Every unit in $X$ have $x$ capability, meaning they are able to neutralize, on average, $x$ opposing units in unit time. Similarly, let the capability of units of the other party be $y$.

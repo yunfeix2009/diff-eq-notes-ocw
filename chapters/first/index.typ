@@ -9,6 +9,7 @@
     #include "constant-coe/index.typ"
     #include "autonamous/index.typ"
     #include "change-var/index.typ"
+    #include "delta/index.typ"
     #include "app/index.typ"
   ],
 )

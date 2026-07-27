@@ -42,10 +42,10 @@ $y' > 0$ when $r y - w> 0$, or when the line $r x - w$ is above the $x$-axis. At
 
 
 Population models, such as the logistics curve, are also autonomous. Also extending from the exponential growth model, $ dv(y, t) = k y, $ when $k$ is evolving linearly as $b - a y$, the differential equation becomes logistic.
-#definition[
+#lbl(<def:logistic>, definition[
   The logistic differential equation may be written in the form of
   $ dv(y, t) = (b - a y) y, $ or $ dv(y, t) = -a y^2 + b y. $
-]
+])
 
 In the plane of $dv(y, t)$ versus $y$, the differential equation is a downward parabola with zeros at $0$ and $b/a$. At $b/a$, going left pushes it right while going to right also pushes it right, making it semi-stable. At $0$, going right pushes it right and going left pushes it left, making it unstable.
 
