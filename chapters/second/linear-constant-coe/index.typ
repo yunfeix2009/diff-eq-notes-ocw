@@ -8,7 +8,15 @@
 
 As usual, we begin with the simplest example of second-order ODE, one with constant coefficients and is homogeneous. The standard form of such is $ y'' + p y' + q y = 0. $ Here, consider only the real differential equation, where the independent variable $t in RR$ and all coefficients, $p$ and $q$ are also real.
 
-To solve this equation in general, it suffices to to find two independent solutions as any solution will be a linear combinations of the two. In other words, the solution space is a two dimensional vector space.
+To clarify the meaning of "independent," the following definition is made.
+#lbl(<def:independent>, definition[
+  Two solutions, $y_1$ and $y_2$ are independent iff $ y_1 != c y_2 and y_2 != d y_1, quad c, d "are constants". $
+])
+#remark[
+  The fact that the two conditions are both mentioned is to prevent the case of one of the solutions being $0$.
+]
+
+To solve this equation in general, it suffices to to find two independent solutions as any solution will be a linear combinations of the two. In other words, the solution space is a two dimensional vector space. The formal version of the generalized theorem to arbitrary order linear ODE's @thm:lin-comb-sol along with its proof may be found in @sec:linear-ode.
 
 To intuitively see why this is true, consider the following argument. With abuse of notations, let $D := dv(, x)$, $ (D^2 + p D + q) y = 0. $ For this equation to be true for a general $y$, $ D^2 + p D + q = 0, $ which is a quadratic equation with two (that may be complex or repeating) roots. The fact that the solution space forms a vector space may be verified by checking the linear combination of two independent solutions also form a solution.
 

@@ -6,7 +6,7 @@
   label: <sec:const-coe-ode>,
 )
 
-Higher-order linear equations with constant coefficients could be solved with Laplace transform, @sec:laplace. Consider the general form of such equation $ a_n y^((n)) + a_(n-1) y^((n-1)) + dots.c + a_2 y'' + a_1 y' + a_0 y = f(t) $ with arbitrary initial conditions $ y(0) = y_0, quad y'(0) = y_1. $
+Higher-order linear equations with constant coefficients could be solved with Laplace transform, @sec:laplace. Consider the general form of such equation $ a_n y^((n)) + a_(n-1) y^((n-1)) + dots.c + a_2 y'' + a_1 y' + a_0 y = f(t) $ with arbitrary initial conditions $ y(0) = y_0, quad y'(0) = y_1, dots. $
 
 As an overview, generally to solve such equations, take Laplace transform of both sides. Let $y(t) -> Y(s)$, this step results in an algebraic equation of $Y$ with a solution as a rational function. Hence, it may be decomposed as simple fractions with partial fractional decomposition, then be applied inverse Laplace transformation for $y$.
 
