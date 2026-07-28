@@ -6,6 +6,7 @@
   label: <sec:second-app>,
   children: [
     #include "oscillator/index.typ"
+    #include "vibration/index.typ"
     #include "circuit/index.typ"
     #include "resonance/index.typ"
   ],

@@ -69,3 +69,4 @@ In the door example, this represents the case when a person is pushing the door 
 #remark[
   The use of $op("atan2")$ here rectifies quadrant issues.
 ]
+
