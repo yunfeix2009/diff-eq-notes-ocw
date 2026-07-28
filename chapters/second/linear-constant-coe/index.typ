@@ -58,3 +58,22 @@ With auxiliary angle method @thm:aam, $ y = e^(a t) C cos(theta - phi), $ for ce
 ]
 
 Finally, there is the case where the characteristic equation has a double root, say $ (r + a)^2 = 0, quad r = -a. $ It may be verified that $t e^(-a t)$ is a solution and that it is independent of $e^(- a t)$. Hence, the general solution is $ y = c_1 e^(-a t) + c_2 t e^(-a t). $
+
+#example[
+  Solve the differential equation $ dot(x) + 3x = t^2+t. $
+]
+#solution[
+  Since the highest order on the right side is $2$, a quadratic guess, or ansatz is reasonable. $ x := A t^2 + B t + C $ gives $ dot(x) + 3 x & = 3A t^2 + (2A + 3B) t + (B + 3C) \
+               & = t^2 + t. $ So, $ cases(A = 3, (2A + 3B) = 1, B + 3C = 0). $ Solving gives $ (A, B, C) = (1/3, 1/9, -1/27). $ Therefore, $ x(t) = 1/3 x^2 + 1/6 x - 1/27. #qedhere $
+]
+
+#example[
+  Solve the differential equation $ dot.double(x) + dot(x) = t^4. $
+]
+#solution[
+  Let $ x := A x^5 + B x^4 + C x^3 + D x^2 + E x $ be a particular solution, then $ dot.double(x) + dot(x) & = (20 A x^3 + 12 B x^2 + 6 C x + 2D) \
+                         & quad+ (5 A x^4 + 4 B x^3 + 3 C x^2 + 2 D x+ E) \
+                         & = (5A) x^4 + (20 A + 4 B) x^3 + (12B + 3C) x^2 \
+                         & quad+ (6C + 2 D)x + (2D + E) \
+                         & = t^4. $ So, $ cases(5A = 1, 20A + 4B = 0, 12B + 3C = 0, 6C + 2D = 0, 2D + E = 0). $ Solving gives $ (A, B, C, D, E) = (1/5, -1, 4, -12, 24). $ Therefore, $ x_p(t) = 1/5x^5 - x^4 + 4 x^3 - 12 x^2 + 24 x. #qedhere $
+]
