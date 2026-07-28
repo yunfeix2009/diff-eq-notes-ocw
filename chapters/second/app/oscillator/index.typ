@@ -52,3 +52,20 @@ In the door example, this represents the case when a person is pushing the door 
 
   The natural angular frequency is $sqrt(4) = 2$.
 ]
+#example[
+  Find the periodic solution to $ dot.double(x) + 8 dot(x) + 7 x = F_0 cos(omega t). $ Give gain and phase lag.
+]
+#solution[
+  The homogeneous solution is $ x_c = C_1 e^(- t) + C_2 e^(-7 t). $
+
+  With @thm:exp-input, the complexified solution is $ tilde(x) & = F_0 e^(i omega t)/((i omega)^2 + 8 (i omega) + 7) \
+           & = F_0 e^(i omega t)/((7-omega^2) - (8 omega)i). $ So, a particular solution that is the real part of $tilde(x)$ is $ x_p & = F_0 Re(tilde(x)) \
+      & = F_0 Re(((cos (omega t) + i sin (omega t) ) (7 - omega^2 + 8 omega i))/((7-omega)^2 + (8 omega)^2)) \
+      & = F_0((7 - omega^2) cos(omega t) + (8 omega) sin (omega t))/((7 - omega)^2 + (8 omega)^2) \
+      & = ( F_0 cos(omega t - phi))/sqrt((7 - omega)^2 + (8 omega)^2), quad phi := op("atan2")(8omega,7 - omega^2). $
+  So, the gain is $ R(t) = ((7- omega)^2 + (8 omega)^2)^(-1/2) $ while the phase-lag is $ phi(t) = op("atan2") (8 omega, 7 - omega^2).#qedhere $
+
+]
+#remark[
+  The use of $op("atan2")$ here rectifies quadrant issues.
+]
