@@ -8,36 +8,36 @@
 
 Consider the following model. Assume the two engaged sides each have $X$ and $Y$ units. Every unit in $X$ have $x$ capability, meaning they are able to neutralize, on average, $x$ opposing units in unit time. Similarly, let the capability of units of the other party be $y$.
 
-In cold weapon era, due to geological constraints, there are at most $k$ units from each side able to be deployed.
+In the Cold Weapon Era, due to geological constraints, there are at most $k$ units from each side able to be deployed.
 In this case, $dv(X, t)$ and $dv(Y, t)$ are both constant, namely $-k y$ and $- k x$, assuming $Y> k$ and $X> k$, respectively.
 The model hence is linear. The side that wins out is the second one going to $0$, or a larger $x$-intercept.
 $ cases(dv(X, t) = -k y, dv(Y, t) = -k x) ==> cases(X(t) = X_0 - k y t, Y(t) = Y_0 - k x t). $ Let $t_x$, $t_y$ be the time at which each party reaches $0$ remaining units, $ cases(t_x = X_0/(k y), t_y = Y_0/(k x)). $ So, $ t_x > t_y <==> X_0 x > Y_0 y. $
 Therefore, the core criterion that determines the result of the engagement is the product of the number of units initially and capability.
 
-This model is extremely over-simplified, including the homogeneity of units of each side, fixed number of combating units, fight-til-die mentality of all soldiers, ideal damage making, etc. Nonetheless, this model still reveals the essential insight that the result-determining criterion is proportional to initial units and capability.
+This model is extremely over-simplified, including the homogeneity of units on each side, fixed number of combating units, fight-til-die mentality of all soldiers, ideal damage making, etc. Nonetheless, this model still reveals the essential insight that the result-determining criterion is proportional to initial units and capability.
 
-Removing the constraint on maximum number of units engaging, the model resembles more to the hot weapon case as in line infantry or two resting positions both within opposing party's artillery range.
+Removing the constraint on the maximum number of units engaging, the model better resembles the hot weapon case as in line infantry or two resting positions both within opposing party's artillery range.
 
 Thus, the differential equation becomes $ cases(dv(X, t) = - y Y, dv(Y, t) = -x X). $ Still, it remains as linear first-order autonomous.
 
-Although direct separation of variables solves the equations, notice that time is not impactful since all units are assumed to have infinite combat will. Taking ratios gives $ dv(X, Y) = y/x Y/X, quad x, X != 0. $ Separation of variables gives $  x X dif X = y Y dif Y & ==> 1/2 x X^2 = 1/2 y Y^2+C \
-==> x X^2 - y Y^2 = C. $ Hence, plotting $Y$ against $X$ shows a hyperbola. The $cal(X)$ party wins iff $X$ remains positive when $Y$ vanishes. This occurs iff $C> 0$, or $x X^2 > y Y^2$. The capability of a single unit is still linear, but the number of units is now a quadratic term in determining the result of the battle.
+Although direct separation of variables solves the equations, notice that time is not impactful since all units are assumed to have infinite combat will. Taking ratios gives $ dv(X, Y) = y/x Y/X, quad x, X != 0. $ Separation of variables gives $ x X dif X = y Y dif Y & ==> 1/2 x X^2 = 1/2 y Y^2+C \
+                      & ==> x X^2 - y Y^2 = C. $ Hence, plotting $Y$ against $X$ shows a hyperbola. The $cal(X)$ party wins iff $X$ remains positive when $Y$ vanishes. This occurs iff $C> 0$, or $x X^2 > y Y^2$. The capability of a single unit is still linear, but the number of units is now a quadratic term in determining the result of the battle.
 
-Socially, this distinction of power of the number of units reveals deep insights on the transition from cold-weapon to hot-weapon. In the cold-weapon era, the capability of units is roughly equivalent to the number of units in importance (with a grain of salt); however, in the hot-weapon era, the number of units becomes much more important. Historically, this was known as the introduction of gun-powder weapons breaking the monopoly of military strength held by aristocrats as a peasant with brief instruction on how to use a musket could incur fatal damage to a well-trained knight. Socially, this fact contributed to the frequent reforms and new considerations of military strength.
+Socially, this distinction of the exponent of the number of units reveals deep insights on the transition from the Cold Weapon Era to the Hot Weapon Era. In the Cold Weapon Era, the capability of units is roughly equivalent to the number of units in importance; however, in the hot-weapon era, the number of units becomes much more important. Historically, this was known as the introduction of gun-powder weapons breaking the monopoly of military strength held by aristocrats as a peasant with brief instruction on how to use a musket could incur fatal damage to a well-trained knight. Socially, this fact contributed to the frequent reforms and new considerations of military strength.
 
-Since the equation is autonomous @def:auto, the velocity field may be graphed (see @sec:geo) to see the solution curves numerically.
+Since the equation is autonomous (@def:auto), the velocity field may be graphed (see @sec:geo) to see the solution curves numerically.
 
 Including time, the solution is $ cases(X(t) = C_1 e^(-omega t) + C_2 e^(omega t), Y(t) = sqrt(x/y) (C_1 e^(-omega t) - C_2 e^(omega t))), quad omega := sqrt(x y) $
 
 #lbl(<emp:war>, example[
-  In the Battle of Iwo Jima, per official records, there are $N$ Japanese soldiers initially, and vanished at the end with no reinforcement. On the other hand, there are $0$ American soldiers initially, with reinforcement described by $P(t)$, generally described by $M(t)$. The number of troops at all time is known. Find the inflected casualty rate per Japanese soldier and per U.S. solder, $A$, $B$, respectively.
+  In the Battle of Iwo Jima, Japan fought U.S.. Let the number of Japanese soldiers at time $t$ be modeled by $N(t)$ and assume $N(0) = N_0$. On the other hand, there are $0$ American soldiers initially, with reinforcement described by $P(t)$, generally described by $M(t)$. The number of troops at all time is known. Find the inflected casualty rate per Japanese soldier and per U.S. solder, $A$, $B$, respectively.
 ])
 #solution[
   The battle could be modeled by $ cases(dv(N, t) = - B M, dv(M, t) = P(t) - A N) thin thin . $ To find $B$, since $M$ is well-documented, $ N(t_f) - N(t_0) & = integral_(t_0)^t_f - B M(t) dif t \
           ==> N_0 & =B integral_(t_0)^(t_f) M(t) dif t \
             ==> B & = N_0/(integral_(t_0)^(t_f) M(t) dif t). $
 
-  Thus, $B$ is known. From data, $B approx 0.0106$. Then, integrating $-B M$ gives $N(t)$. Manipulating the second equation gives $ A = (P(t) - dv(M, t))/N. $ All quantities on the right are known, so $A$ may be computed, which turns out around $0.0544$ @engel1954verification.
+  Thus, $B$ is known. From data, $B approx 0.0106$. Then, integrating $-B M$ gives $N(t)$. Manipulating the second equation gives $ A = (P(t) - dv(M, t))/N. $ All quantities on the right are known, so $A$ may be computed, which is around $0.0544$ @engel1954verification.
 ]
 #remark[
   The troops curve generated through these data fits historical records remarkably well.
@@ -47,7 +47,7 @@ Including time, the solution is $ cases(X(t) = C_1 e^(-omega t) + C_2 e^(omega t
   Moreover, notice that although $ A / B approx 5.1, $ meaning each individual Japanese soldier was more effective than U.S. soldier, the number of U.S. soldiers is roughly three times that of the Japanese, making U.S. finishing victorious.
 ]
 
-Modern (post-WW II) warfare are often asymmetric. Guerrilla warfare is a common example. The guerrilla side does not engage directly, in full, with the other side. To model this, a correction may be added as in the casualty rate is multiplied to the ratio of the current to initial troops size.
+Modern (post-WWII) warfare is often asymmetric. Guerrilla warfare is a common example. The guerrilla side does not engage directly, in full, with the other side. To model this, a correction may be added as in the casualty rate is multiplied to the ratio of the current to initial troops size.
 Hence, the corrected model, based on @deitchman1962lanchester is #lbl(<eqn:deitchman>, $ cases(dv(X, t) = -y Y X/X_0, dv(Y, t) = -x X). $)
 
 
