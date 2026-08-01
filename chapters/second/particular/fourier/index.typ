@@ -62,9 +62,9 @@ Altogether, we have the following theorem.
 ])
 With this theorem, it is apparent that a periodic function with $2pi$ as a period has exactly one Fourier expansion.
 
-#example[
+#lbl(<emp:fourier-square>, example[
   Find the Fourier series of the square wave function, $ f(x) = cases(1 &"if" x in [2k pi, (2k + 1) pi), -1 & "if" x in [(2k + 1) pi, 2k pi)), quad k in ZZ $
-]
+])
 #solution[
   Due to periodicity, it suffices to consider only the interval $[-pi, pi)$. Due to discontinuity at $x = 0$, with integration, with symmetry $a_n =0$ and $ integral_(-pi)^0 sin(n t) dif t + integral_0^pi sin(n t) dif t&= 2/n ( 1- cos(n pi)) \ &= cases(4/n &"if" n equiv 1 (mod 2), 0 &"if" n equiv 0 (mod 2)). #qedhere $
 ]
@@ -205,3 +205,4 @@ The formulas for the Fourier coefficients become $ cases(a_n = 1/L integral_(-L)
   However, this problem may also be solved by noticing  that $f'(t) = op("sq")(t)$, so $ f(t) & = integral op("sq")(t) dif t \
        & = C + 4/pi sum_(n "odd") -1/n^2 sin(n t) $ and $ C = 1/(2pi) integral_(-pi)^pi abs(t) dif t = pi/2. #qedhere $
 ]
+
