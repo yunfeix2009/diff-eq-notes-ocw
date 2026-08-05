@@ -7,6 +7,7 @@
   children: [
     #include "linear/index.typ"
     #include "app/index.typ"
+    #include "exam-three.typ"
   ],
 )
 

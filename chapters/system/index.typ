@@ -9,6 +9,7 @@
     #include "non-linear/index.typ"
     #include "geo/index.typ"
     #include "app/index.typ"
+    #include "final-exam.typ"
   ],
 )
 
