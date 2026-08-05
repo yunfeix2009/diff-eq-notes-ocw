@@ -36,10 +36,21 @@ Additionally, the expansion of a smooth function with Taylor's Series is signifi
 ])
 
 
-Moreover, the technique of separating variables is used to solve some elementary differential equations. 
+Moreover, the technique of _separating variables_ is used to solve some elementary differential equations.
 #example[
   Find the general solution to the differential equation $ dv(y, x) = y^2. $
 ]
 #solution[
-  With abuse of notation, the equation could be manipulated into $ (dif y)/y^2 = dif x &==> integral (dif y)/(y^2) = integral dif x \ &==> -1/y = x + C \ &==> y = 1/(C-x). #qedhere $ 
+  With abuse of notation, the equation could be manipulated into $ (dif y)/y^2 = dif x & ==> integral (dif y)/(y^2) = integral dif x \
+                      & ==> -1/y = x + C \
+                      & ==> y = 1/(C-x). qedhere $
+]
+
+#theorem[
+  The solution to $ dot(y) = a y $ is $ y(t) = C e^(a t). $
+]
+#proof[
+  By separation of variables, $ (dy)/(y) = a dif x & ==> integral (dif y)/(y) = integral a (dif x) \
+                     & ==> ln|y| = a x + C \
+                     & ==> y = C e^(a x). qedhere $
 ]

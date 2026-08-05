@@ -10,6 +10,7 @@
     #include "autonamous/index.typ"
     #include "change-var/index.typ"
     #include "app/index.typ"
+    #include "exam/index.typ"
   ],
 )
 

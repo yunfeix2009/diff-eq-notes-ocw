@@ -10,6 +10,7 @@
     #include "particular/index.typ"
     #include "delta/index.typ"
     #include "app/index.typ"
+    #include "exam/index.typ"
   ],
 )
 

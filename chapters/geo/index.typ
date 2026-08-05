@@ -14,7 +14,7 @@ For the fundamental single variable first order differential equation, the solut
 #lbl(<def:integral-curve>, definition[
   A curve is an _integral curve_ of a given directional field iff it is tangent to all vectors it intersects.
 ])
-Observe that for the direction field to be well-defined, no two integral curves intersect wrt the same direction field. Even more, two integral curves cannot be tangent, as if they do share a point, their extension is fixed and is given by that point and the direction field. Thus, they cannot diverge.
+Observe that for the direction field to be well-defined, no two integral curves intersect wrt the same direction field (which is a result of @thm:existence-uniqueness). Even more, two integral curves cannot be tangent, as if they do share a point, their extension is fixed and is given by that point and the direction field (also by @thm:existence-uniqueness). Thus, they cannot diverge.
 
 Given $y' = f(x, y)$, the integral curve exists at $(x_0, y_0)$ if $f(x, y)$ is continuous in the neighborhood of $(x_0, y_0)$ and the curve is unique if $f_y (x, y)$ is continuous in the neighborhood of $(x_0, y_0)$ .
 
@@ -32,6 +32,19 @@ Although the direction field could be drawn by finding the slope ($dv(y, x)$) of
 In multivariable calculus @saint_multivariable_calculus_notes, this is exactly the level curve.
 
 To plot all points with slope $c$, first solve $ y' = f(x, y) = c. $ Then, plot points on the isocline with slope $c$.
+
+Let the isocline where $f(x, y) = m$ be the $m$-isocline. #lbl(<def:null-cline>, definition[
+  The _null-cline_ of $f$ is the curve described by $f(x, y) = 0$, where the $0$-isocline.
+])
+Notice that the points on the null-cline are constant solutions to the differential equation.
+
+#definition[
+  The _separatrix_ of a directional field is a curve that separates the plane into regions of solutions that exhibits qualitatively different behaviors.
+]
+
+#definition[
+  A _funnel_ is a region in the phase plane bounded by curves through which trajectories are forced to move in one direction.
+]
 
 The following really goes after @sec:system, though included here for completeness of the discussion on the geometric interpretations of differential equations.
 
