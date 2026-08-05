@@ -1,16 +1,14 @@
 #import "/lib.typ": *
 
 #show: docs-subsubchapter.with(
-  title: "Fourier Series",
-  route: "fourier",
-  label: <sec:fourier>,
+  title: "Fourier Series Fundamental",
+  route: "fourier-fundamental",
+  label: <sec:fourier-fundamental>,
 )
 
-It is possible, with complexifying and @thm:exp-input and @thm:special-exp-input to find the response ($y$) given sinusoidal input ($f(t) = sin (n t)$ or $f(t) = cos(n t)$).
+This section reviews the basics regarding Fourier series that is meant to provide a mostly self-contained foundation before using these powerful tools in solving and analyzing differential equations. By design, this section may also be used as a stand alone material for a brief introduction to the subject of Fourier series.
 
-In this section, the aim is to learn how to represent certain functions as a linear combination of sinusoids $sin(n t)$ and $cos(n t)$ where $n in NN$, thereby using linearity and the response with input as a sinusoid to solve the problem.
-
-Borrowing ideas from linear algebra, specifically @saint_even_linear_algebra_notes_2026 Section 9.6, "Fourier Series," the functional space formed by the orthogonal bases as all the sinusoids is covers all functions with period $2pi$, although with transformations this may be generalized to functions of other periods.
+Borrowing ideas from linear algebra, specifically Section 9.6 of @saint_even_linear_algebra_notes_2026, "Fourier Series," the functional space formed by the orthogonal bases as all the sinusoids is covers all functions with period $2pi$, although with transformations this may be generalized to functions of other periods.
 
 Recall the definition of functional inner product and orthogonality.
 #definition[
@@ -85,7 +83,7 @@ The following are some handy properties regarding Fourier series.
 ]
 Proof is pedantic to show completely here, note that the product of two odd functions is even.
 
-An important not is that, unlike the Taylor series which approximates to the best at a certain point, the Fourier series approximates the function _on an interval_ instead.
+An important note is that, unlike the Taylor series which approximates to the best at a certain point, the Fourier series approximates the function _on an interval_ instead.
 
 #example[
   Find the Fourier expansion of the function $f(t) = t$ on the interval $(-pi, pi)$.

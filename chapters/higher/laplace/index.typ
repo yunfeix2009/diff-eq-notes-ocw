@@ -1,6 +1,6 @@
 #import "/lib.typ": *
 
-#show: docs-subsubchapter.with(
+#show: docs-subchapter.with(
   title: "Laplace Transform",
   route: "laplace",
   label: <sec:laplace>,

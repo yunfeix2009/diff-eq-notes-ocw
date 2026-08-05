@@ -6,7 +6,6 @@
   label: <sec:linear-ode>,
   children: [
     #include "homo/index.typ"
-    #include "laplace/index.typ"
     #include "const-coe/index.typ"
   ],
 )
