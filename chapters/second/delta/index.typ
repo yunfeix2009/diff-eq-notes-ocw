@@ -71,6 +71,10 @@ The denominator means that the term is amplified when $omega_0$ is close to $n p
 
 This fact implies the principle behind the mechanism behind biological auditory systems. Inside the ear, after the fluid meant to amplify the vibration, their are small hair-like cells each of a different length, thus different natural frequency. A sound wave triggers the "hairs" that are similar to its dominant frequencies. As a result, the ear naturally does this Fourier decomposition when subjected to a sound wave.
 
+However, as for any physical device, it is impossible to be able to tune to infinitely many frequencies. Phenomenally, for any Fourier analyzer with finite terms, at any jump discontinuity of the function, the truncated Fourier series always overshoots by around $.18$ of the jump. This is known as Gibb's phenomenon.
+An example of this is in the square wave function.
+#figure-wrapper(figure(potential-frame(image("/assets/image-2.png"))))
+
 #example[
   Find the periodic solution to the forced oscillator equation $ dot.double(x) + 2 dot(x) + 4x =op("sq") (t) $ where $ op("sq")(t) & = 4/pi sum_(n "odd") sin(n t)/n \
               & = cases(-1 &"if" -pi<t<0, 1 &"if" 0<t<pi). $

@@ -204,3 +204,15 @@ The formulas for the Fourier coefficients become $ cases(a_n = 1/L integral_(-L)
        & = C + 4/pi sum_(n "odd") -1/n^2 sin(n t) $ and $ C = 1/(2pi) integral_(-pi)^pi abs(t) dif t = pi/2. #qedhere $
 ]
 
+To demonstrate the power of Fourier series, consider the famous Basel problem solved by Euler, but approached with Fourier series.
+#example[
+  Prove $ sum_(i=1)^oo 1/i^2 = pi^2/6. $
+]
+The following proof requires no advanced knowledge regarding infinite series and calculus but basic integration and Fourier series. As am implicit tradeoff, however, the proof requires significant observations.
+#solution[
+  Let $f(t) := t(pi - t/2), quad t in [0, 2pi]$ with period $2pi$. Notice $f(t)$ is even, so the $b_n$ terms of its Fourier coefficients are $0$. Moreover, assume $n>0$, $ a_n & = 1/pi integral_0^(2pi) cos(n t) t (pi - t/2) dif t \
+      & = (sin (2pi n) - pi n cos(2pi n) - pi n)/(pi n^3) #tag[(via integration by parts)] \
+      & = -2/n^2. $ For $n=0$, $ a_0 =1/pi integral_0^(2pi) t(pi-t/2) dif t = 2 pi^2/3 $ Since $f(t)$ is continuous on $RR$, its Fourier series converges to it. $ f(t) & = sum_(n=0)^oo a_n cos(n t)               & = (2 pi^2/3)/2 + sum_(n=1)^oo -2/n^2 cos(n t) \
+       & = pi^2/3 + sum_(n=1)^oo - 2/n^2 cos(n t). $ Hence, $ f(0) & = 0 (pi-0/2) = 0 \
+       & = pi^2/3 + sum_(n=1)^oo -2/n^2. $ Therefore, $ sum_(n=1)^oo 1/n^2 = pi^2/6. qedhere $
+]
