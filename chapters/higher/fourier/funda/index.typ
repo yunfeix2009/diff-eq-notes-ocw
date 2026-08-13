@@ -99,27 +99,124 @@ An important note is that, unlike the Taylor series which approximates to the be
   Thus, $ f(t) = 2 sum_(i=1)^oo (-1)^(n+1) sin(n t) /n. #qedhere $
 ]
 
-To realize when the Fourier series converges to a given function, we have the following theorem.
-#theorem[Dirichlet's Convergence Theorem for Fourier Series][
-  If $f$ is continuous at $t_0$, its Fourier series is $f(t_0)$ at $t_0$.
-  If $f$ has a jump discontinuity at $t_0$, its Fourier series evaluates to the average of the limits of the two sides.
+To realize when the Fourier series converges to a given function, we provide a criterion given in @thm:fourier-convergence-criterion. In preparation of the proof, we first derive the Riemann--Lebesgue Lemma:
+#lbl(
+  lemma[Riemann--Lebesgue][
+    Let $a,b in RR$ with $a<b$. Let $f:[a,b] -> CC$ be integrable. Then
+    $ lim_(x -> oo) integral_a^b f(t) ee^(ii x t) dt = 0. $
+  ],
+  <lem:riemann-lebesgue>,
+)
+#proof[
+  By the Heine--Cantor Theorem, $f$ is uniformly continuous. Hence, for any $epsilon > 0$, there exists a partition
+  $ a = t_0 < t_1 < dots < t_n = b $
+  such that
+  $ abs(f(t) - f(t_k)) < epsilon / (2 (b - a)) $
+  whenever $t_k <= t <= t_(k + 1)$. Writing
+  $
+    integral_a^b f(t) ee^(ii x t) dt &= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) f(t) ee^(ii x t) dt \
+    &= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) (f(t) - f(t_k)) ee^(ii x t) dt + sum_(k = 0)^(n - 1) f(t_k) integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt,
+  $
+  we obtain
+  $
+    abs(sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) (f(t) - f(t_k)) ee^(ii x t) dt) <= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) abs(f(t) - f(t_k)) dt < epsilon / 2.
+  $
+  Moreover,
+  $
+    integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt = (ee^(ii x t_(k+1)) - ee^(ii x t_k)) / (ii x),
+  $
+  and therefore
+  $
+    abs(sum_(k = 0)^(n - 1) f(t_k) integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt) & <= 2 / x sum_(k = 0)^(n - 1) abs(f(t_k)).
+  $
+  Since the latter tends to $0$ as $x -> oo$, there exists $x_0 > 0$ such that
+  $ 2 / x sum_(k = 0)^(n - 1) abs(f(t_k)) < epsilon / 2 $ for all $x > x_0$. Consequently,
+  $
+    abs(integral_a^b f(t) ee^(ii x t) dt) < epsilon
+  $
+  for all $x > x_0$. Since $epsilon > 0$ was arbitrary, it follows that
+  $
+    lim_(x -> oo) integral_a^b f(t) ee^(ii x t) dt = 0. #qedhere
+  $
+  // copied from complex analysis
 ]
+#lbl(
+  theorem[
+    Let $f$ be an integrable $2pi$-periodic function, and let $S_n (x)$ denote the $m$-th partial sum of its Fourier series. Fix $x in RR$. If there exists a number $S = S(x)$ such that
+    $ lim_(u -> 0^+) (f(x + u) + f(x-u) - 2S(x))/u $ exists and is finite, then $ lim_(n -> oo) S_n (x) = S(x), $
+    and moreover,
+    $
+      S(x) = lim_(u -> 0^+) (f(x + u) + f(x-u))/2.
+    $
+  ],
+  <thm:fourier-convergence-criterion>,
+)
 
-#let _quote = quote[among all the proofs not presented in this course, this one is the most beyond the scope of this class]
-#let _credit = [
-  — Prof. Arthur Mattuck
+// #let _quote = quote[among all the proofs not presented in this course, this one is the most beyond the scope of this class]
+// #let _credit = [
+//   — Prof. Arthur Mattuck
+// ]
+
+#proof[
+  Writing $S_n (x)$ explicitly, we have
+  $
+    S_n (x) & = 1 / (2 pi) integral_(-pi)^pi f(t) dt \
+            & quad""+ sum_(k=1)^n (1 / pi integral_(-pi)^pi f(t) cos(k t) dt) cos(k x) \
+            & wide""+ sum_(k=1)^n (1 / pi integral_(-pi)^pi f(t) sin(k t) dt) sin(k x) \
+            & = 1 / pi integral_(-pi)^pi f(t) [1 / 2 + sum_(k=1)^n [cos(k t) cos(k x) + sin(k t) sin(k x)]] dt \
+            & = 1 / pi integral_(-pi)^pi f(t) [1 / 2 + sum_(k=1)^n cos(k (t-x))] dt. \
+  $
+  From the analyticity of the exponential, one derives Euler's formula, giving that $ cos w = (e^(i w) + e^(-i w)) / 2. $
+  Therefore,
+  $
+    1 / 2 + sum_(k=1)^n cos(k (t-x)) & = 1 / 2 + sum_(k=1)^n (e^(i k (t-x)) + e^(-i k (t-x))) / 2 \
+    & = 1 / 2 sum_(k=-n)^n e^(i k (t-x)) = 1 / 2 e^(-i n (t-x)) sum_(k=0)^(2n) e^(i k (t-x)) \
+    &= 1 / 2 e^(-i n (t-x)) (1 - e^(i (2n+1) (t-x))) / (1 - e^(i (t-x))) \
+    &= 1 / 2 (e^(-i n (t-x)) - e^(i (n+1) (t-x))) / (1 - e^(i (t-x))) \
+    &= 1 / 2 ((e^(-i (n + 1 / 2) (t-x)) - e^(i (n + 1 / 2) (t-x))) / (2 i)) / ((e^(-i / 2 (t-x)) - e^(i / 2 (t-x))) / (2 i)) \
+    &= (sin [(n+1/2)(t-x)]) / (2 sin[1 / 2 (t-x)]).
+  $
+  Then letting $u = t- x$, we have
+  $ S_n (x) = 1 / pi integral_(-pi - x)^(pi - x) (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u. $
+  By the $2pi$-periodicity of the integrand, we have
+  #lbl(
+    $
+      S_n (x) &= 1 / pi integral_(-pi)^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u \
+      &=1 / pi integral_(-pi)^0 (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u + 1 / pi integral_0^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u \
+      &=1 / pi integral_0^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x - u) dif u + 1 / pi integral_0^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u \
+      &=1 / pi integral_0^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) [f(x - u) + f(x + u)] dif u
+    $,
+    <eq:fourier-convergence-criterion-dirichlet-formula-intermediate>,
+  )
+  Now assume $S$ exists. We aim to derive conditions on it such that $S_n - S -> 0$. Then
+  $ S_n (x) - S(x) = 1 / pi integral_0^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) [f(x - u) + f(x + u)] dif u - S(x) $
+  Now consider the special case of $f equiv 1$ on $RR$. Then $S_0 equiv 1$ and for each $n in NN$, $S_n equiv 1$. Then @eq:fourier-convergence-criterion-dirichlet-formula-intermediate gives
+  $ 1 = 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) 2 dif u. $
+  Returning to the general case, we now have
+  $
+    S_n (x) - S(x) & = 1 / pi integral_(-pi)^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u \
+    & quad""- 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) 2S(x) dif u \
+    & = 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) [f(x - u) + f(x + u) - 2S(x)] dif u.
+    & = Re 1 / pi integral_0^(pi) (exp[i(n+1/2)u]) (f(x - u) + f(x + u) - 2S(x)) / (2 sin(u / 2)) dif u.
+  $
+  To make this expression vanish, we note that if we are able to show that $ [f(x - u) + f(x + u) - 2S(x)] / (2 sin(u / 2)) $ is continuous on $[0, pi]$, then by the Riemann--Lebesgue Lemma, the integral vanishes as $n -> oo$. Since $f$ is continuous on $RR$, it suffices to show that the limit of the expression exists as $u -> 0^+$. Observe that this is equivalent to
+  $
+    lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / (2 sin(u / 2)) = lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / u < oo
+  $
+  by the theorem hypotheses. Hence, the limit exists and is finite, giving that $ f(x - u) + f(x + u) - 2S(x) = Order(u) ==> S(x) = lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / u. qedhere $
 ]
+// insert piecewise c1 case.
 
-#context {
-  let render-mode = state("render-mode").get()
-  if render-mode == "pdf" {
-    align(center)[#_quote]
-    align(right)[#_credit]
-  } else {
-    html.elem("div", attrs: (style: "text-align: center;"), _quote)
-    html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
-  }
-}
+// #context {
+//   let render-mode = state("render-mode").get()
+//   if render-mode == "pdf" {
+//     align(center)[#_quote]
+//     align(right)[#_credit]
+//   } else {
+//     html.elem("div", attrs: (style: "text-align: center;"), _quote)
+//     html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
+//   }
+// }
 
 According to AI, it uses something as a dirichlet kernel. Proof omitted.
 
