@@ -100,46 +100,7 @@ An important note is that, unlike the Taylor series which approximates to the be
 ]
 
 To realize when the Fourier series converges to a given function, we provide a criterion given in @thm:fourier-convergence-criterion. In preparation of the proof, we first derive the Riemann--Lebesgue Lemma:
-#lbl(
-  lemma[Riemann--Lebesgue][
-    Let $a,b in RR$ with $a<b$. Let $f:[a,b] -> CC$ be integrable. Then
-    $ lim_(x -> oo) integral_a^b f(t) ee^(ii x t) dt = 0. $
-  ],
-  <lem:riemann-lebesgue>,
-)
-#proof[
-  By the Heine--Cantor Theorem, $f$ is uniformly continuous. Hence, for any $epsilon > 0$, there exists a partition
-  $ a = t_0 < t_1 < dots < t_n = b $
-  such that
-  $ abs(f(t) - f(t_k)) < epsilon / (2 (b - a)) $
-  whenever $t_k <= t <= t_(k + 1)$. Writing
-  $
-    integral_a^b f(t) ee^(ii x t) dt &= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) f(t) ee^(ii x t) dt \
-    &= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) (f(t) - f(t_k)) ee^(ii x t) dt + sum_(k = 0)^(n - 1) f(t_k) integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt,
-  $
-  we obtain
-  $
-    abs(sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) (f(t) - f(t_k)) ee^(ii x t) dt) <= sum_(k = 0)^(n - 1) integral_(t_k)^(t_(k + 1)) abs(f(t) - f(t_k)) dt < epsilon / 2.
-  $
-  Moreover,
-  $
-    integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt = (ee^(ii x t_(k+1)) - ee^(ii x t_k)) / (ii x),
-  $
-  and therefore
-  $
-    abs(sum_(k = 0)^(n - 1) f(t_k) integral_(t_k)^(t_(k + 1)) ee^(ii x t) dt) & <= 2 / x sum_(k = 0)^(n - 1) abs(f(t_k)).
-  $
-  Since the latter tends to $0$ as $x -> oo$, there exists $x_0 > 0$ such that
-  $ 2 / x sum_(k = 0)^(n - 1) abs(f(t_k)) < epsilon / 2 $ for all $x > x_0$. Consequently,
-  $
-    abs(integral_a^b f(t) ee^(ii x t) dt) < epsilon
-  $
-  for all $x > x_0$. Since $epsilon > 0$ was arbitrary, it follows that
-  $
-    lim_(x -> oo) integral_a^b f(t) ee^(ii x t) dt = 0. #qedhere
-  $
-  // copied from complex analysis
-]
+// todo: riemann lebesgue
 #lbl(
   theorem[
     Let $f$ be an integrable $2pi$-periodic function, and let $S_n (x)$ denote the $m$-th partial sum of its Fourier series. Fix $x in RR$. If there exists a number $S = S(x)$ such that
@@ -196,7 +157,7 @@ To realize when the Fourier series converges to a given function, we provide a c
   $
     S_n (x) - S(x) & = 1 / pi integral_(-pi)^pi (sin [(n+1/2)u]) / (2 sin(u / 2)) f(x + u) dif u \
     & quad""- 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) 2S(x) dif u \
-    & = 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) [f(x - u) + f(x + u) - 2S(x)] dif u.
+    & = 1 / pi integral_0^(pi) (sin [(n+1/2)u]) / (2 sin(u / 2)) [f(x - u) + f(x + u) - 2S(x)] dif u\
     & = Re 1 / pi integral_0^(pi) (exp[i(n+1/2)u]) (f(x - u) + f(x + u) - 2S(x)) / (2 sin(u / 2)) dif u.
   $
   To make this expression vanish, we note that if we are able to show that $ [f(x - u) + f(x + u) - 2S(x)] / (2 sin(u / 2)) $ is continuous on $[0, pi]$, then by the Riemann--Lebesgue Lemma, the integral vanishes as $n -> oo$. Since $f$ is continuous on $RR$, it suffices to show that the limit of the expression exists as $u -> 0^+$. Observe that this is equivalent to
