@@ -164,7 +164,7 @@ To realize when the Fourier series converges to a given function, we provide a c
   $
     lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / (2 sin(u / 2)) = lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / u < oo
   $
-  by the theorem hypotheses. Hence, the limit exists and is finite, giving that $ f(x - u) + f(x + u) - 2S(x) = Order(u) ==> S(x) = lim_(u -> 0^+) (f(x - u) + f(x + u) - 2S(x)) / u. qedhere $
+  by the theorem hypotheses. Hence, the limit exists and is finite, giving that $ f(x - u) + f(x + u) - 2S(x) = Order(u) ==> S(x) = lim_(u -> 0^+) (f(x - u) + f(x + u)) / u. qedhere $
 ]
 // insert piecewise c1 case.
 
